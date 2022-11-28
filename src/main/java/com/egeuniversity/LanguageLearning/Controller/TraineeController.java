@@ -20,6 +20,6 @@ public class TraineeController {
 
     @GetMapping("/get")
     public String getByName(){
-        return traineeService.findByName("meyra").getName();
+        return traineeService.findByName("meyr2a").getName();
     }
 }

@@ -21,5 +21,10 @@ public class Trainee extends BaseEntity<Integer, Trainee> {
     @Column(name = "NAME")
     private String name;
 
+    @Column(name = "SURNAME")
+    private String surname;
+
+    @Column(name = "EMAIL")
+    private String email;
 
 }

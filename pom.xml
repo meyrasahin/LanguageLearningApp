@@ -8,10 +8,10 @@
 		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>kodlamaio</groupId>
-	<artifactId>northwind</artifactId>
+	<groupId>com.egeuniversity</groupId>
+	<artifactId>LLApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>northwind</name>
+	<name>LLApp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

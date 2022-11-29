@@ -6,6 +6,8 @@ import com.egeuniversity.LanguageLearning.Service.Generic.BaseEntityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TraineeServiceImpl extends BaseEntityServiceImpl<Integer, Trainee> implements TraineeService {
 
@@ -18,7 +20,12 @@ public class TraineeServiceImpl extends BaseEntityServiceImpl<Integer, Trainee> 
     }
 
     @Override
-    public Trainee findByName(String name) {
-        return traineeRepository.getOne(1);
+    public Trainee findById(String id) {
+        return traineeRepository.getOne(Integer.valueOf(id));
+    }
+
+    @Override
+    public List<Trainee> listTrainees() {
+        return traineeRepository.findAll();
     }
 }

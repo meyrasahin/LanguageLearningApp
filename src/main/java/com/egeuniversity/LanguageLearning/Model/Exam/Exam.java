@@ -1,40 +1,36 @@
-package com.egeuniversity.LanguageLearning.Model.Course;
+package com.egeuniversity.LanguageLearning.Model.Exam;
 
 import com.egeuniversity.LanguageLearning.Model.Generic.BaseEntity;
 import com.egeuniversity.LanguageLearning.Model.LevelUpExam.LevelUpExam;
+import com.egeuniversity.LanguageLearning.Model.Trainee.Trainee;
 import lombok.*;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="COURSE")
+@Table(name="EXAM")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Course extends BaseEntity<Integer, Course> {
+public class Exam extends BaseEntity<Integer, Exam> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
     private Integer id;
 
-    @Column(name = "NAME")
-    private String name;
-
-    @Column(name = "CURRENT_LEVEL")
-    private String currentLevel;
-
-    @Column(name = "PRE_LEVEL")
-    private String previousLevel;
-
-    @Column(name = "NEXT_LEVEL")
-    private String nextLevel;
-
-    @Column(name = "LECTURER")
-    private String lecturerName;
+    @OneToOne(fetch = FetchType.EAGER, targetEntity = Trainee.class)
+    @JoinColumn(name = "TRAINEE_ID")
+    private Trainee trainee;
 
     @OneToOne(fetch = FetchType.EAGER, targetEntity = LevelUpExam.class)
     @JoinColumn(name = "LEVELUP_EXAM_ID")
     private LevelUpExam levelUpExam;
+
+    @Column(name = "TRAINEE_ANSWERS")
+    private String answers;
+
+    @Column(name = "GRADE")
+    private String grade;
 }

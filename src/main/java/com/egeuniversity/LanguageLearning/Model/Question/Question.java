@@ -1,6 +1,7 @@
 package com.egeuniversity.LanguageLearning.Model.Question;
 
 import com.egeuniversity.LanguageLearning.Model.Generic.BaseEntity;
+import com.egeuniversity.LanguageLearning.Model.LevelUpExam.LevelUpExam;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,4 +24,20 @@ public class Question extends BaseEntity<Integer, Question> {
 
     @Column(name = "ANSWER")
     private String answer;
+
+    @Column(name = "OPTION1")
+    private String option1;
+
+    @Column(name = "OPTION2")
+    private String option2;
+
+    @Column(name = "OPTION3")
+    private String option3;
+
+    @Column(name = "OPTION4")
+    private String option4;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "levelUpExam_id", referencedColumnName = "ID")
+    private LevelUpExam levelUpExam;
 }

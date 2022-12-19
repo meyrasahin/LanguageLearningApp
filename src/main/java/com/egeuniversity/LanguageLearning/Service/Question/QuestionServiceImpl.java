@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class QuestionServiceImpl extends BaseEntityServiceImpl<Integer, Question> implements QuestionService {
@@ -23,5 +25,10 @@ public class QuestionServiceImpl extends BaseEntityServiceImpl<Integer, Question
     @Override
     public List<Question> listQuestions() {
         return questionRepository.findAll();
+    }
+
+    @Override
+    public Question getQuestion(String id) {
+        return questionRepository.findById(Integer.valueOf(id)).orElse(null);
     }
 }

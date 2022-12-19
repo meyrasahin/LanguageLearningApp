@@ -2,6 +2,7 @@ package com.egeuniversity.LanguageLearning.Model.Question;
 
 import com.egeuniversity.LanguageLearning.Model.Generic.BaseEntity;
 import com.egeuniversity.LanguageLearning.Model.LevelUpExam.LevelUpExam;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -37,7 +38,7 @@ public class Question extends BaseEntity<Integer, Question> {
     @Column(name = "ANSWER")
     private String answer;
 
-
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "levelUpExam_id", referencedColumnName = "ID")
     private LevelUpExam levelUpExam;

@@ -6,6 +6,8 @@ import com.egeuniversity.LanguageLearning.Service.Generic.BaseEntityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CourseServiceImpl extends BaseEntityServiceImpl<Integer, Course> implements CourseService {
 
@@ -21,4 +23,5 @@ public class CourseServiceImpl extends BaseEntityServiceImpl<Integer, Course> im
     public Course getById(String id) {
         return courseRepository.getOne(Integer.valueOf(id));
     }
+    public List<Course> list() {return courseRepository.findAll();}
 }

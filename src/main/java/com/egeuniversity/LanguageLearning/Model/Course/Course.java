@@ -2,6 +2,7 @@ package com.egeuniversity.LanguageLearning.Model.Course;
 
 import com.egeuniversity.LanguageLearning.Model.Generic.BaseEntity;
 import com.egeuniversity.LanguageLearning.Model.LevelUpExam.LevelUpExam;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -34,6 +35,7 @@ public class Course extends BaseEntity<Integer, Course> {
     @Column(name = "LECTURER")
     private String lecturerName;
 
+    @JsonIgnore
     @OneToOne(fetch = FetchType.EAGER, targetEntity = LevelUpExam.class)
     @JoinColumn(name = "LEVELUP_EXAM_ID")
     private LevelUpExam levelUpExam;

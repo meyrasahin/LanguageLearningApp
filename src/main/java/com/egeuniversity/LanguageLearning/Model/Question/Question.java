@@ -35,10 +35,8 @@ public class Question extends BaseEntity<Integer, Question> {
     private String option4;
 
     @Column(name = "ANSWER")
-    private int answer;
+    private String answer;
 
-    @Column(name = "CHOSEN")
-    private int chosen;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "levelUpExam_id", referencedColumnName = "ID")

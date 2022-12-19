@@ -1,0 +1,255 @@
+/* Mask group*/
+
+body {
+    position: absolute;
+    width: 1440px;
+    height: 1837px;
+}
+
+/* Welcome */
+
+.welcome{
+    position: absolute;
+    width: 1276px;
+    height: 578px;
+    left: 68px;
+    top: 223px;
+}
+
+/* WELCOME TO DAILY */
+
+.welcome-to{
+    position: absolute;
+    width: 358px;
+    height: 252px;
+    left: 87px;
+    top: 277px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* The free, fun, and effective way to learn a language! */
+.slogan{
+    position: absolute;
+    width: 397px;
+    height: 89px;
+    left: 68px;
+    top: 550px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+
+/* Rectangle 2 */
+.get-started {
+    position: absolute;
+    width: 152px;
+    height: 54px;
+    left: 190px;
+    top: 649px;
+
+    background: #46B05D;
+    border-radius: 15px;
+
+    /* Get Started */
+
+
+    position: absolute;
+    width: 106px;
+    height: 32px;
+    left: 213px;
+    top: 660px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+
+
+/* online-tutorials-concept_52683-37480 1 */
+
+.home-img{
+    position: absolute;
+    width: 858px;
+    height: 578px;
+    left: 486px;
+    top: 223px;
+
+    background: url(https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc);
+    border-radius: 35px;
+}
+
+
+/* Numbers */
+
+.numbers{
+    position: absolute;
+    width: 1338px;
+    height: 98px;
+    left: 53px;
+    top: 855px;
+}
+
+.lessons{
+    /* Rectangle 3 */
+
+
+    position: absolute;
+    width: 312px;
+    height: 98px;
+    left: 53px;
+    top: 855px;
+
+    background: rgba(247, 195, 46, 0.15);
+    border-radius: 20px;
+
+    /* 10K Online Lessons */
+
+
+    position: absolute;
+    width: 138px;
+    height: 46px;
+    left: 140px;
+    top: 881px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.tutors{
+    /* Rectangle 6 */
+
+
+    position: absolute;
+    width: 312px;
+    height: 98px;
+    left: 395px;
+    top: 855px;
+
+    background: rgba(29, 59, 83, 0.1);
+    border-radius: 20px;
+
+    /* 200+ Expert Tutors */
+
+
+    position: absolute;
+    width: 121px;
+    height: 46px;
+    left: 491px;
+    top: 881px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.students{
+    /* Rectangle 5 */
+
+
+    position: absolute;
+    width: 312px;
+    height: 98px;
+    left: 737px;
+    top: 855px;
+
+    background: rgba(111, 66, 193, 0.1);
+    border-radius: 20px;
+
+    /* 60K+ Online Students */
+
+
+    position: absolute;
+    width: 144px;
+    height: 46px;
+    left: 821px;
+    top: 881px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.certified{
+    /* Rectangle 4 */
+
+
+    position: absolute;
+    width: 312px;
+    height: 98px;
+    left: 1079px;
+    top: 855px;
+
+    background: rgba(23, 162, 184, 0.1);
+    border-radius: 20px;
+
+    /* 2K+ Certified Exams */
+
+
+    position: absolute;
+    width: 143px;
+    height: 46px;
+    left: 1166px;
+    top: 881px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}

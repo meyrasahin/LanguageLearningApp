@@ -22,9 +22,6 @@ public class Question extends BaseEntity<Integer, Question> {
     @Column(name = "TEXT")
     private String text;
 
-    @Column(name = "ANSWER")
-    private String answer;
-
     @Column(name = "OPTION1")
     private String option1;
 
@@ -36,6 +33,12 @@ public class Question extends BaseEntity<Integer, Question> {
 
     @Column(name = "OPTION4")
     private String option4;
+
+    @Column(name = "ANSWER")
+    private int answer;
+
+    @Column(name = "CHOSEN")
+    private int chosen;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "levelUpExam_id", referencedColumnName = "ID")

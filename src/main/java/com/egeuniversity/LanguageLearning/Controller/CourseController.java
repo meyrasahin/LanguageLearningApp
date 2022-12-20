@@ -3,15 +3,15 @@ package com.egeuniversity.LanguageLearning.Controller;
 import com.egeuniversity.LanguageLearning.Model.Course.Course;
 import com.egeuniversity.LanguageLearning.Service.Course.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/course")
+@Controller
 public class CourseController {
 
     private CourseService courseService;
@@ -22,14 +22,16 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/course/{id}")
     public String getById(@PathVariable String id){
         return courseService.getById(id).getName();
     }
 
-    @GetMapping("/getCourseList")
-    public List<Course> getAllCourses() {
-        return courseService.list();
+    @GetMapping("/courses")
+    public String getAllCourses(HttpServletRequest request, Model model) {
+        List<Course> courseList = courseService.list();
+        model.addAttribute("courses", courseList);
+        return "courses";
     }
 
 }

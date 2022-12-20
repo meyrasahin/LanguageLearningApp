@@ -36,6 +36,7 @@
     position: absolute;
     background: #46B05D;
     border-radius: 15px;
+    border-color: #46B05D;
 
     /* Get Started */
     width: 106px;
@@ -168,4 +169,33 @@
     text-align: center;
 
     color: #000000;
+}
+
+.why-daily {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.why-content {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.social-media{
+    width: 30px;
+    height: 30px;
+}
+.why-img{
+    position: absolute;
+    left: 120px;
+    top: 878px;
 }

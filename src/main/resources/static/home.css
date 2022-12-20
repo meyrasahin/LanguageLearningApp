@@ -1,62 +1,4 @@
-body {
-    position: absolute;
-    width: 1440px;
-    height: 1837px;
-}
-.logo{
-    width: 120px;
-    height: 120px;
-}
-.title{
-    position: absolute;
-    left: 170px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 56px;
-    display: flex;
-    align-items: center;
-
-    color: #000000;
-
-}
-
-.menu-item{
-    position: absolute;
-    top: 40px;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 31px;
-    /* identical to box height */
-
-    display: flex;
-    align-items: center;
-
-    color: #000000;
-}
-
-.search{
-    position: absolute;
-    left: 1079px;
-    top: 40px;
-    background: #F7F3F3;
-    border-radius: 40px;
-    border-color: #F7F3F3;
-}
-
-.welcome{
-    position: absolute;
-    width: 1276px;
-    height: 578px;
-    left: 68px;
-}
-
 .welcome-to{
-    position: absolute;
-    width: 358px;
     height: 252px;
     left: 87px;
     top: 130px;
@@ -76,9 +18,7 @@ body {
 .slogan{
     position: absolute;
     width: 397px;
-    height: 89px;
-    left: 68px;
-    top: 430px;
+    left: 120px;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -94,29 +34,20 @@ body {
 
 .get-started {
     position: absolute;
-    width: 152px;
-    height: 54px;
-    left: 190px;
-    top: 520px;
-
     background: #46B05D;
     border-radius: 15px;
 
     /* Get Started */
-
-
-    position: absolute;
     width: 106px;
     height: 32px;
-    left: 213px;
-    top: 500px;
+    left: 270px;
+    top: 490px;
 
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 15px;
     line-height: 23px;
-    display: flex;
     align-items: center;
     text-align: center;
 
@@ -124,28 +55,22 @@ body {
 }
 
 .home-img{
-    position: absolute;
     width: 858px;
     height: 578px;
     left: 486px;
     top: 223px;
 
-    background: url(https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc);
+    /*background: url(https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc);*/
     border-radius: 35px;
 }
 
 .numbers{
-    position: absolute;
     width: 1338px;
     height: 98px;
     left: 53px;
 }
 
 .lessons{
-    /* Rectangle 3 */
-
-
-    position: absolute;
     width: 312px;
     height: 98px;
     left: 53px;
@@ -173,10 +98,6 @@ body {
 }
 
 .tutors{
-    /* Rectangle 6 */
-
-
-    position: absolute;
     width: 312px;
     height: 98px;
     left: 395px;
@@ -204,10 +125,6 @@ body {
 }
 
 .students{
-    /* Rectangle 5 */
-
-
-    position: absolute;
     width: 312px;
     height: 98px;
     left: 737px;
@@ -235,10 +152,6 @@ body {
 }
 
 .certified{
-    /* Rectangle 4 */
-
-
-    position: absolute;
     width: 312px;
     height: 98px;
     left: 1079px;

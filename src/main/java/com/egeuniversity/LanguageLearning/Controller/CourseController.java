@@ -1,7 +1,9 @@
 package com.egeuniversity.LanguageLearning.Controller;
 
 import com.egeuniversity.LanguageLearning.Model.Course.Course;
+import com.egeuniversity.LanguageLearning.Model.Trainee.Trainee;
 import com.egeuniversity.LanguageLearning.Service.Course.CourseService;
+import com.egeuniversity.LanguageLearning.Service.Trainee.TraineeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,9 @@ import java.util.List;
 
 @Controller
 public class CourseController {
+
+    @Autowired
+    private TraineeService traineeService;
 
     private CourseService courseService;
 
@@ -34,6 +39,9 @@ public class CourseController {
         List<Course> courseList = courseService.list();
         courseList.sort(Comparator.comparing(Course::getId));
         model.addAttribute("courses", courseList);
+
+        Trainee trainee = traineeService.getById(1);
+        model.addAttribute("trainee", trainee);
         return "courses";
     }
 

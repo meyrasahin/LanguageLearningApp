@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="maincontainer">
+  <div class="monkeylogin">
+    <div class="animcon" id="animcon">
+      <img id="hands" src="https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/hands.png"/>
+    </div>
+    <div class="formcon">
+      <form>
+        <input type="email" id="mail" name="" onclick="openeye();" class="tb" placeholder="Email" autocomplete="off"/>
+        <br/>
+        <br/>
+        <input type="password" id="pwdbar" onclick="closeye();" name="pwd" class="tb"placeholder="Password" />
+        <br/>
+        <br/>
+        <input type="submit" name="" class="sbutton" value="L O G I N" />
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var x=document.getElementById("hands");
+  var y=document.getElementById("animcon");
+  function closeye()
+  {
+    y.style.backgroundImage="url(https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/monkey_pwd.gif)";
+    x.style.marginTop="0%";
+  }
+  function openeye()
+  {
+    y.style.backgroundImage="url(https://raw.githubusercontent.com/naaficodes/Monkey-Login/master/images/monkey.gif)";
+    x.style.marginTop="110%";
+  }
+</script>
+</body>
+</html>

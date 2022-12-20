@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -32,6 +32,7 @@ public class CourseController {
     @GetMapping("/courses")
     public String getAllCourses(Model model) {
         List<Course> courseList = courseService.list();
+        courseList.sort(Comparator.comparing(Course::getId));
         model.addAttribute("courses", courseList);
         return "courses";
     }

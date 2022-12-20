@@ -35,6 +35,12 @@ public class Course extends BaseEntity<Integer, Course> {
     @Column(name = "LECTURER")
     private String lecturerName;
 
+    @Column(name = "PARTICIPANTS")
+    private int participants;
+
+    @Column(name = "IMG_URL")
+    private String imageUrl;
+
     @JsonIgnore
     @OneToOne(fetch = FetchType.EAGER, targetEntity = LevelUpExam.class)
     @JoinColumn(name = "LEVELUP_EXAM_ID")

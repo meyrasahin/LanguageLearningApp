@@ -23,12 +23,14 @@ public class CourseController {
     }
 
     @GetMapping("/course/{id}")
-    public String getById(@PathVariable String id){
-        return courseService.getById(id).getName();
+    public String getById(@PathVariable String id, Model model){
+        Course course = courseService.getById(id);
+        model.addAttribute("course", course);
+        return "course";
     }
 
     @GetMapping("/courses")
-    public String getAllCourses(HttpServletRequest request, Model model) {
+    public String getAllCourses(Model model) {
         List<Course> courseList = courseService.list();
         model.addAttribute("courses", courseList);
         return "courses";

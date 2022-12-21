@@ -2,218 +2,291 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Daily</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body class="vsc-initialized">
-<header class="navbar-light navbar-sticky header-static">
-  <nav class="navbar navbar-expand-xl">
-    <div class="container-fluid px-3 px-xl-5">
-      <a class="navbar-brand" href="/" style="font-size: 50px">
-        <img src="https://cdn-icons-png.flaticon.com/512/616/616429.png" alt="Logo" width="80" height="80">
-        Daily
-      </a>
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-animation"></span>
-      </button>
-      <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-        <ul class="navbar-nav navbar-nav-scroll mx-auto" style="font-size: 25px">
-          <li class="nav-item me-5">
-            <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
-          </li>
-          <li class="nav-item me-5">
-            <a class="nav-link" href="courses">Dersler</a>
-          </li>
-          <li class="nav-item me-5">
-            <a class="nav-link" href="#">Eğitmenler</a>
-          </li>
-        </ul>
-        <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
-          <div class="nav-item w-100">
-            <form class="position-relative">
-              <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">
-              <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
-                <i class="fas fa-search fs-6 "></i>
-              </button>
-            </form>
+  <header class="navbar-light navbar-sticky header-static">
+    <nav class="navbar navbar-expand-xl">
+      <div class="container-fluid px-3 px-xl-5">
+        <a class="navbar-brand" href="/" style="font-size: 50px">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616429.png" alt="Logo" width="80" height="80">
+          Daily
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-animation"></span>
+        </button>
+        <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
+          <ul class="navbar-nav navbar-nav-scroll mx-auto" style="font-size: 25px">
+            <li class="nav-item me-5">
+              <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="courses">Dersler</a>
+            </li>
+            <li class="nav-item me-5">
+              <a class="nav-link" href="lecturers">Eğitmenler</a>
+            </li>
+          </ul>
+          <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
+            <div class="nav-item w-100">
+              <form class="position-relative">
+                <input class="form-control pe-5 bg-transparent" type="search" placeholder="Search" aria-label="Search">
+                <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                  <i class="fas fa-search fs-6 "></i>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="dropdown ms-1 ms-lg-0">
-        <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-          <img class="avatar-img rounded-circle" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
-        </a>
-        <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown" data-bs-popper="static" onclick="function f() {this.addClass(show); }">
-          <li class="px-3 mb-3">
-            <div class="d-flex align-items-center">
-              <div class="avatar me-3">
-                <img class="avatar-img rounded-circle shadow" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
+        <div class="dropdown ms-1 ms-lg-0">
+          <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="avatar-img rounded-circle" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
+          </a>
+          <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown" data-bs-popper="static" onclick="function f() {this.addClass(show); }">
+            <li class="px-3 mb-3">
+              <div class="d-flex align-items-center">
+                <div class="avatar me-3">
+                  <img class="avatar-img rounded-circle shadow" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
+                </div>
+                <div>
+                  <a class="h6" href="#">Polat Alemdar</a>
+                  <p class="small m-0">example@gmail.com</p>
+                </div>
               </div>
-              <div>
-                <a class="h6" href="#">[[${trainee.name}]] [[${trainee.surname}]]</a>
-                <p class="small m-0">[[${trainee.email}]]</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-person fa-fw me-2"></i>Edit Profile
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-gear fa-fw me-2"></i>Account Settings
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <i class="bi bi-info-circle fa-fw me-2"></i>Help
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item bg-danger-soft-hover" href="#">
-              <i class="bi bi-power fa-fw me-2"></i>Sign Out
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-5">
-      <h1 class="welcome-to">WELCOME TO DAILY!</h1><br>
-      <h2 class="slogan">The free, fun, and effective way to learn a language!</h2><br>
-      <button class="get-started">Get Started</button>
-    </div>
-    <div class="col-sm-3">
-      <img src="https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc" class="home-img">
-    </div>
-  </div>
-</div>
-<br>
-<div class="container-fluid text-center">
-  <br>
-  <div class="row text-center slideanim">
-    <div class="col-sm-3">
-      <h1 class="lessons justify-content-center" style="color: #575454">10K Online Lessons</h1>
-    </div>
-    <div class="col-sm-3">
-      <h1 class="tutors justify-content-center" style="color: #575454">200+ Expert Tutors</h1>
-    </div>
-    <div class="col-sm-3">
-      <h1 class="students justify-content-center" style="color: #575454">60K+ Online Students</h1>
-    </div>
-    <div class="col-sm-3">
-      <h1 class="certified justify-content-center" style="color: #575454">2K+ Certified Exams</h1>
-    </div>
-  </div>
-  <br>
-</div>
-<br>
-<div class="conainer">
-  <div class="row g-4" style="text-align: center">
-    <div class="col-sm-6 col-lg-4">
-      <h2>Why Daily?</h2>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Effective and efficient</h5>
-        <p class="mb-0">Our courses effectively and efficiently
-          teach reading, listening, and speaking skills.</p>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Personalized learning</h5>
-        <p class="mb-0">Combining the best of AI and language science,
-          lessons are tailored to help you learn at just the right level and pace.</p>
-      </div>
-    </div>
-    <div class="class=col-sm-6 col-lg-4">
-      <img class="why-img" src="https://img.freepik.com/free-vector/study-abroad-concept-illustration_114360-7493.jpg?w=2000" height="250px">
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Stay motivated</h5>
-        <p class="mb-0">We make it easy to form a habit of language learning,
-          with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Stay motivated</h5>
-        <p class="mb-0">We make it easy to form a habit of language learning,
-          with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
-      </div>
-    </div>
-  </div>
-  <br>
-</div>
-<br>
-<footer>
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-3 follow" style="text-align: center">
-        <h5 class="me-0">Follow us</h5>
-        <ul class="list-inline mb-0 mt-3">
-          <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png">
-          </li>
-          <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png">
-          </li>
-          <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png">
-          </li>
-          <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Youtube3_svg-512.png">
-          </li>
-          <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-512.png">
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-6"></div>
-      <div class="col-lg-3 contact" style="text-align: center">
-        <h5 class="mb-2 mb-md-4">Contact</h5>
-        <p class="mb-2">Toll free:
-          <span class="h6 fw-light ms-2">+1234 568 963</span>
-          <span class="d-block small">(9:AM to 8:PM IST)</span>
-        </p>
-        <p class="mb-0">Email:
-          <span class="h6 fw-light ms-2">example@gmail.com</span>
-        </p>
-      </div>
-    </div>
-  </div>
-  <hr class="mt-4 mb-0">
-  <div class="py-3">
-    <div class="container px-0">
-      <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
-        <div class="text-primary-hover"> Copyrights
-          <a href="#" class="text-body">©2022 Eduport</a>. All rights reserved.
-        </div>
-        <div class="justify-content-center mt-3 mt-lg-0">
-          <ul class="nav list-inline justify-content-center mb-0">
-            <li class="list-inline-item">
-              <a class="nav-link" href="#">Terms of use</a>
             </li>
-            <li class="list-inline-item">
-              <a class="nav-link pe-0" href="#">Privacy policy</a>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-person fa-fw me-2"></i>Edit Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-gear fa-fw me-2"></i>Account Settings
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-info-circle fa-fw me-2"></i>Help
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item bg-danger-soft-hover" href="#">
+                <i class="bi bi-power fa-fw me-2"></i>Sign Out
+              </a>
             </li>
           </ul>
         </div>
       </div>
+    </nav>
+  </header>
+  <section class="position-relative overflow-hidden pt-5 pt-lg-3">
+    <div class="container">
+      <!-- Title -->
+      <div class="row align-items-center g-5">
+        <!-- Left content START -->
+        <div class="col-lg-5 col-xl-4 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0">
+          <!-- Title -->
+          <h1 class="mb-0 display-6">WELCOME TO DAILY!
+          </h1>
+
+          <!-- Content -->
+          <p class="my-4 lead">The free, fun, and effective way to learn a language.</p>
+
+          <!-- Info -->
+          <ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
+            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Learn with experts</li>
+            <li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get certificate</li>
+            <li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>Get membership</li>
+          </ul>
+
+          <div class="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
+            <!-- Button -->
+            <div class="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
+              <button class="get-started">Get Started</button>
+            </div>
+          </div>
+        </div>
+        <!-- Left content END -->
+
+        <!-- Right content START -->
+        <div class="col-lg-7 col-xl-6 text-center position-relative">
+          <!-- Image -->
+          <div class="position-relative">
+            <img class="rounded-3" src="https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc" alt="">
+          </div>
+        </div>
+        <!-- Right content END -->
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
+  <br>
+  <section class="py-0 py-xl-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Counter item -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-15 rounded-3" style="background: rgba(247, 195, 46, 0.15)">
+            <span class="display-6 lh-1 text-warning mb-0"><i class="fas fa-tv"></i></span>
+            <div class="ms-4 h6 fw-normal mb-0">
+              <div class="d-flex">
+                <h5 class="mb-0 fw-bold">10K</h5>
+              </div>
+              <p class="mb-0">Online Courses</p>
+            </div>
+          </div>
+        </div>
+        <!-- Counter item -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-10 rounded-3" style="background: rgba(29, 59, 83, 0.1)">
+            <span class="display-6 lh-1 text-blue mb-0"><i class="fas fa-user-tie"></i></span>
+            <div class="ms-4 h6 fw-normal mb-0">
+              <div class="d-flex">
+                <h5 class="mb-0 fw-bold">200+</h5>
+              </div>
+              <p class="mb-0">Expert Tutors</p>
+            </div>
+          </div>
+        </div>
+        <!-- Counter item -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-10 rounded-3" style="background: rgba(111, 66, 193, 0.1)">
+            <span class="display-6 lh-1 text-purple mb-0"><i class="fas fa-user-graduate"></i></span>
+            <div class="ms-4 h6 fw-normal mb-0">
+              <div class="d-flex">
+                <h5 class="mb-0 fw-bold">60K+</h5>
+              </div>
+              <p class="mb-0">Online Students</p>
+            </div>
+          </div>
+        </div>
+        <!-- Counter item -->
+        <div class="col-sm-6 col-xl-3">
+          <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-10 rounded-3" style="background: rgba(23, 162, 184, 0.1)">
+            <span class="display-6 lh-1 text-info mb-0"><i class="bi bi-patch-check-fill"></i></span>
+            <div class="ms-4 h6 fw-normal mb-0">
+              <div class="d-flex">
+                <h5 class="mb-0 fw-bold">6K+</h5>
+              </div>
+              <p class="mb-0">Certified Courses</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section>
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-4">
+        <div class="col-sm-10 col-xl-6 text-center mx-auto">
+          <h2>Why Daily?</h2>
+        </div>
+      </div>
+
+      <!-- Work process -->
+      <div class="row g-4 g-md-5">
+        <!-- Item -->
+        <div class="col-md-3 text-center rounded-3" style="background: #EBEFF2">
+          <img src="https://img.freepik.com/free-vector/effective-coworking-colleagues-togetherness-workers-collaboration-teamwork-regulation-workflow-efficiency-increase-team-members-arranging-mechanism_335657-1623.jpg?w=2000" class="h-200px" style="height: 200px">
+          <h4 class="mt-3">Effective and efficient</h4>
+          <p class="text-truncate-2 mb-0">Our courses effectively and efficiently
+            teach reading, listening, and speaking skills.</p>
+        </div>
+
+        <!-- Item -->
+        <div class="col-md-3 text-center rounded-3" style="background: #EBEFF2">
+          <img src="https://static.vecteezy.com/system/resources/previews/001/270/244/original/studying-and-learning-online-concept-vector.jpg" class="h-200px" style="height: 200px">
+          <h4 class="mt-3">Personalized learning</h4>
+          <p class="text-truncate-2 mb-0">Combining the best of AI and language science,
+            lessons are tailored to help you learn at just the right level and pace.
+          </p>
+        </div>
+
+        <!-- Item -->
+        <div class="col-md-3 text-center rounded-3" style="background: #EBEFF2">
+          <img src="https://img.freepik.com/premium-vector/vector-illustration-people-running-their-goal-moving-up-with-motivation-towards-goal_148553-285.jpg" class="h-200px" style="height: 200px">
+          <h4 class="mt-3">Stay motivated</h4>
+          <p class="text-truncate-2 mb-0">We make it easy to form a habit of language learning,
+            with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
+        </div>
+
+        <!-- Item -->
+        <div class="col-md-3 text-center rounded-3" style="background: #EBEFF2">
+          <img src="https://img.freepik.com/free-vector/happy-young-couple-having-fun-girl-guy-dancing-party-celebrating-good-news-flat-illustration_74855-10820.jpg?w=2000" class="h-200px" style="height: 200px">
+          <h4 class="mt-3">Have fun with it!</h4>
+          <p class="text-truncate-2 mb-0">Effective learning doesn’t have to be boring! Build your skills each day with engaging exercises and playful characters.</p>
+        </div>
+      </div> <!-- Row END -->
+    </div>
+  </section>
+  <br>
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 follow" style="text-align: center">
+          <h5 class="me-0">Follow us</h5>
+          <ul class="list-inline mb-0 mt-3">
+            <li class="list-inline-item">
+              <i class="fab fa-fw fa-facebook-f"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-fw fa-instagram"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-fw fa-twitter"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-fw fa-youtube"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-fw fa-linkedin-in"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6"></div>
+        <div class="col-lg-3 contact" style="text-align: center">
+          <h5 class="mb-2 mb-md-4">Contact</h5>
+          <p class="mb-2">Toll free:
+            <span class="h6 fw-light ms-2">+1234 568 963</span>
+            <span class="d-block small">(9:AM to 8:PM IST)</span>
+          </p>
+          <p class="mb-0">Email:
+            <span class="h6 fw-light ms-2">example@gmail.com</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="mt-4 mb-0">
+    <div class="py-3">
+      <div class="container px-0">
+        <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
+          <div class="text-primary-hover"> Copyrights
+            <a href="#" class="text-body">©2022 Eduport</a>. All rights reserved.
+          </div>
+          <div class="justify-content-center mt-3 mt-lg-0">
+            <ul class="nav list-inline justify-content-center mb-0">
+              <li class="list-inline-item">
+                <a class="nav-link" href="#">Terms of use</a>
+              </li>
+              <li class="list-inline-item">
+                <a class="nav-link pe-0" href="#">Privacy policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class ExamController {
@@ -45,6 +47,11 @@ public class ExamController {
             return "result-fail";
         }
 
+    }
+
+    @GetMapping("exam/start")
+    public String getExam() {
+        return "exam-start";
     }
 
 

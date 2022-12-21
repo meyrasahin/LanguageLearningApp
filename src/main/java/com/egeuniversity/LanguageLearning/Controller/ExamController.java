@@ -25,8 +25,8 @@ public class ExamController {
 
     @GetMapping("/result")
     public String getResult(Model model){
-        ExamDTO examDTO = new ExamDTO("A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A",1,1);
-
+        ExamDTO examDTO = new ExamDTO("A,A,A,B,B,B,B,B,A,A,A,A,B,C,A,A,A,B,A,A",1,1);
+        //"C,D,C,A,D,C,A,C,B,D,C,B,B,C,A,A,A,A,A,A"
         Trainee trainee = traineeService.getById(1);
         model.addAttribute("trainee", trainee);
 
@@ -35,7 +35,16 @@ public class ExamController {
         model.addAttribute("correct", exam.getTrueAnswers());
         model.addAttribute("incorrect", exam.getFalseAnswers());
         model.addAttribute("examTitle", exam.getLevelUpExam().getTitle());
-        return "result";
+        int score = Integer.parseInt(exam.getGrade());
+        if (score > 49) {
+            return "result-success";
+        } else if (score < 50) {
+            return "result-fail";
+        }
+        else {
+            return "result-fail";
+        }
+
     }
 
 

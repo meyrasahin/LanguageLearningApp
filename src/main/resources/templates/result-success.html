@@ -102,21 +102,22 @@
 </div>
 <br>
 <div class="row" style="display: flex; justify-content: center;" >
-    <div class="card col-3" style="background: rgba(29, 59, 83, 0.1)">
+    <div class="card col-2" style="background: rgba(29, 59, 83, 0.1)">
         <div class="card-body">
-            <p class="card-text">Doğru Sayısı: [[${correct}]]</p>
-            <p class="card-text">Yanlış Sayısı: [[${incorrect}]]</p>
-            <p class="card-text">Notu: [[${grade}]]</p>
+            <p class="card-text" style="text-align: center">Doğru Sayısı: [[${correct}]]</p>
+            <p class="card-text" style="text-align: center">Yanlış Sayısı: [[${incorrect}]]</p>
+            <p class="card-text" style="text-align: center">Notu: [[${grade}]]</p>
         </div>
     </div>
 </div>
 <br>
 <br>
-<div class="row" style="display: flex; justify-content: center;" >
-    <div class="card col-10">
+<div class="row" style="display: flex; justify-content: center" >
+    <div class="card col-9" style="background: rgba(70, 176, 93);">
         <div class="card-body">
-            <h5 class="card-title" style="text-align: center">ÜZGÜNÜZ!</h5>
-            <p class="card-text" style="text-align: center">Üzgünüz mesajı</p>
+            <h5 class="card-title" style="text-align: center">TEBRİKLER !</h5>
+            <p class="card-text" style="text-align: center">[[${examTitle}]] kurunu başarıyla tamamladınız.</p>
+            <p class="card-text" style="text-align: center">Bir sonraki kuru ve içeriklerini görüntüleyebilmek için.</p>
             <a href="/courses" class="btn btn-secondary" style="margin-left: 46%">DERSLER</a>
             <p class="card-text" style="text-align: center">alanına gidiniz</p>
         </div>

@@ -5,5 +5,5 @@ import com.egeuniversity.LanguageLearning.Model.Exam.ExamDTO;
 import com.egeuniversity.LanguageLearning.Service.Generic.BaseEntityService;
 
 public interface ExamService extends BaseEntityService<Integer, Exam> {
-    int calculateResult(ExamDTO examDTO);
+    Exam calculateResult(ExamDTO examDTO);
 }

@@ -33,4 +33,11 @@ public class Exam extends BaseEntity<Integer, Exam> {
 
     @Column(name = "GRADE")
     private String grade;
+
+    @Column(name = "CORRECT_ANSWERS")
+    private String trueAnswers;
+
+    @Column(name = "INCORRECT_ANSWERS")
+    private String falseAnswers;
+
 }

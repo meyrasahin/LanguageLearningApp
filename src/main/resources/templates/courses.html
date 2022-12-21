@@ -28,10 +28,6 @@
         margin-inline: 1px;
     }
 
-    .infoCard:hover{
-        background-color: rgba(157, 160, 163, 0.1);
-    }
-
     .col-3{
         font-size: 1.2rem;
     }
@@ -81,8 +77,8 @@
                                 <img class="avatar-img rounded-circle shadow" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
                             </div>
                             <div>
-                                <a class="h6" href="#">Polat Alemdar</a>
-                                <p class="small m-0">example@gmail.com</p>
+                                <a class="h6" href="#">[[${trainee.name}]] [[${trainee.surname}]]</a>
+                                <p class="small m-0">[[${trainee.email}]]</p>
                             </div>
                         </div>
                     </li>
@@ -117,17 +113,35 @@
 <div>
     <br>
     <br>
-    <div class="card border-white col-10 infoCard" style="margin-left: 10%">
-        <div class="card-footer" style="text-align: center;">
-            Seviye Belirleme Sınavı
-        </div>
-        <div class="card-body text">
-            <p class="card-text" style="font-size: 1.5rem; text-align: center;">Bu Sınav Sayesinde Çok Kısa Bir Sürede Seviyene Uygun Kuru Öğrenebilirsin</p>
-        </div>
-        <div class="card-footer" style="display: flex;justify-content: center;">
-            <button type="button" class="btn btn-outline-secondary">Sınava Başla</button>
+    <div class="row">
+        <div class="col-12">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-3 text-center order-1">
+                    <img src="https://eduport.webestica.com/assets/images/element/category-1.svg" alt="">
+                </div>
+                <div class="col-md-6 px-md-5 text-center position-relative order-md-2 mb-5 mb-md-0">
+                    <figure class="position-absolute top-0 start-0">
+                        <svg width="22px" height="22px" viewBox="0 0 22 22">
+                            <polygon class="fill-orange" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
+                        </svg>
+                    </figure>
+                    <figure class="position-absolute top-0 start-50 translate-middle mt-n6 d-none d-md-block">
+                        <svg width="27px" height="27px">
+                            <path class="fill-purple" d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"></path>
+                        </svg>
+                    </figure>
+                    <h1 class="mb-3">Seviye Belirleme Sınavı</h1>
+                    <p class="mb-3">Bu Sınav Sayesinde Çok Kısa Bir Sürede Seviyene En Uygun Kuru Öğrenebilirsin</p>
+                    <button type="button" class="btn btn-dark mb-0 rounded">Sınava Başla</button>
+                </div>
+                <div class="col-6 col-md-3 text-center order-3">
+                    <img src="https://eduport.webestica.com/assets/images/element/category-2.svg" alt="">
+                </div>
+            </div>
         </div>
     </div>
+    <br>
+    <br>
     <br>
     <br>
     <div class="row" style="display: flex; justify-content: center">
@@ -205,8 +219,7 @@
                 </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div></div>
     <br>
     <br>
     <div class="row" style="display: flex; justify-content: center">
@@ -363,6 +376,9 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
 </div>
 <br>
 <footer>

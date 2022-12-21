@@ -32,28 +32,30 @@ public class ExamServiceImpl extends BaseEntityServiceImpl<Integer, Exam> implem
     }
 
     @Override
-    public int calculateResult(ExamDTO examDTO) {
+    public Exam calculateResult(ExamDTO examDTO) {
         Course course = courseService.getById(examDTO.getCourseId());
         LevelUpExam levelUpExam = course.getLevelUpExam();
         List<String> traineeAnswers = List.of(examDTO.getTraineeAnswers().split(","));
         Trainee trainee = traineeService.getById(examDTO.getTraineeId());
 
-        int grade = 0;
+        int correct = 0;
 
         for (int i = 0; i < traineeAnswers.size(); i++) {
             if(levelUpExam.getQuestions().get(i).getAnswer().equals(traineeAnswers.get(i))){
-                grade += 5;
+                correct += 1;
             }
         }
 
         Exam exam = new Exam();
         exam.setLevelUpExam(levelUpExam);
-        exam.setGrade(String.valueOf(grade));
+        exam.setGrade(String.valueOf(correct * 5));
+        exam.setTrueAnswers(String.valueOf(correct));
+        exam.setFalseAnswers(String.valueOf(traineeAnswers.size() - correct));
         exam.setTrainee(trainee);
         exam.setAnswers(examDTO.getTraineeAnswers());
 
         examRepository.save(exam);
 
-        return grade;
+        return exam;
     }
 }

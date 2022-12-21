@@ -1,37 +1,3 @@
-.welcome-to{
-    height: 252px;
-    left: 87px;
-    top: 130px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 72px;
-    line-height: 84px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
-}
-
-.slogan{
-    position: absolute;
-    width: 397px;
-    left: 120px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #000000;
-}
-
 .get-started {
     position: absolute;
     background: #46B05D;
@@ -55,39 +21,4 @@
     color: #FFFFFF;
 }
 
-.home-img{
-    width: 858px;
-    height: 578px;
-    left: 486px;
-    top: 223px;
-    border-radius: 35px;
-}
 
-.why-daily {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 56px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.why-content {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-.social-media{
-    width: 30px;
-    height: 30px;
-}
-.why-img{
-    position: absolute;
-    left: 120px;
-    top: 878px;
-}

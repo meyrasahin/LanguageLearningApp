@@ -6,6 +6,9 @@
   <title>Daily</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body class="vsc-initialized">
 <header class="navbar-light navbar-sticky header-static">
@@ -27,7 +30,7 @@
             <a class="nav-link" href="courses">Dersler</a>
           </li>
           <li class="nav-item me-5">
-            <a class="nav-link" href="#">Eğitmenler</a>
+            <a class="nav-link" href="lecturers">Eğitmenler</a>
           </li>
         </ul>
         <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
@@ -85,77 +88,117 @@
     </div>
   </nav>
 </header>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-5">
-      <h1 class="welcome-to">WELCOME TO DAILY!</h1><br>
-      <h2 class="slogan">The free, fun, and effective way to learn a language!</h2><br>
-      <button class="get-started">Get Started</button>
-    </div>
-    <div class="col-sm-3">
-      <img src="https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc" class="home-img">
+<section class="position-relative overflow-hidden pt-5 pt-lg-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-5">
+        <h1 class="welcome-to">WELCOME TO DAILY!</h1><br>
+        <h2 class="slogan">The free, fun, and effective way to learn a language!</h2><br>
+        <button class="get-started">Get Started</button>
+      </div>
+      <div class="col-sm-3">
+        <img src="https://img.freepik.com/free-vector/online-tutorials-concept_52683-37481.jpg?w=900&t=st=1671480385~exp=1671480985~hmac=d944bfa485ed3f372ac19e9c35f64dfc8dc1e64d9a08d261e2e4b2f1a31da3dc" class="home-img">
+      </div>
     </div>
   </div>
-</div>
+</section>
 <br>
-<div class="container-fluid text-center">
-  <br>
-  <div class="row text-center slideanim">
-    <div class="col-sm-3">
-      <h1 class="lessons justify-content-center" style="color: #575454">10K Online Lessons</h1>
-    </div>
-    <div class="col-sm-3">
-      <h1 class="tutors justify-content-center" style="color: #575454">200+ Expert Tutors</h1>
-    </div>
-    <div class="col-sm-3">
-      <h1 class="students justify-content-center" style="color: #575454">60K+ Online Students</h1>
-    </div>
-    <div class="col-sm-3">
-      <h1 class="certified justify-content-center" style="color: #575454">2K+ Certified Exams</h1>
+<section class="py-0 py-xl-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Counter item -->
+      <div class="col-sm-6 col-xl-3">
+        <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-15 rounded-3" style="background: rgba(247, 195, 46, 0.15)">
+          <span class="display-6 lh-1 text-warning mb-0"><i class="fas fa-tv"></i></span>
+          <div class="ms-4 h6 fw-normal mb-0">
+            <div class="d-flex">
+              <h5 class="mb-0 fw-bold">10K</h5>
+            </div>
+            <p class="mb-0">Online Courses</p>
+          </div>
+        </div>
+      </div>
+      <!-- Counter item -->
+      <div class="col-sm-6 col-xl-3">
+        <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-10 rounded-3" style="background: rgba(29, 59, 83, 0.1)">
+          <span class="display-6 lh-1 text-blue mb-0"><i class="fas fa-user-tie"></i></span>
+          <div class="ms-4 h6 fw-normal mb-0">
+            <div class="d-flex">
+              <h5 class="mb-0 fw-bold">200+</h5>
+            </div>
+            <p class="mb-0">Expert Tutors</p>
+          </div>
+        </div>
+      </div>
+      <!-- Counter item -->
+      <div class="col-sm-6 col-xl-3">
+        <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-10 rounded-3" style="background: rgba(111, 66, 193, 0.1)">
+          <span class="display-6 lh-1 text-purple mb-0"><i class="fas fa-user-graduate"></i></span>
+          <div class="ms-4 h6 fw-normal mb-0">
+            <div class="d-flex">
+              <h5 class="mb-0 fw-bold">60K+</h5>
+            </div>
+            <p class="mb-0">Online Students</p>
+          </div>
+        </div>
+      </div>
+      <!-- Counter item -->
+      <div class="col-sm-6 col-xl-3">
+        <div class="d-flex justify-content-center align-items-center p-4 bg-opacity-10 rounded-3" style="background: rgba(23, 162, 184, 0.1)">
+          <span class="display-6 lh-1 text-info mb-0"><i class="bi bi-patch-check-fill"></i></span>
+          <div class="ms-4 h6 fw-normal mb-0">
+            <div class="d-flex">
+              <h5 class="mb-0 fw-bold">6K+</h5>
+            </div>
+            <p class="mb-0">Certified Courses</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <br>
-</div>
+</section>
 <br>
-<div class="conainer">
-  <div class="row g-4" style="text-align: center">
-    <div class="col-sm-6 col-lg-4">
-      <h2>Why Daily?</h2>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Effective and efficient</h5>
-        <p class="mb-0">Our courses effectively and efficiently
-          teach reading, listening, and speaking skills.</p>
+<section>
+  <div class="conainer">
+    <div class="row g-4" style="text-align: center">
+      <div class="col-sm-6 col-lg-4">
+        <h2>Why Daily?</h2>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="card card-body bg-light p-4 h-100">
+          <h5>Effective and efficient</h5>
+          <p class="mb-0">Our courses effectively and efficiently
+            teach reading, listening, and speaking skills.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="card card-body bg-light p-4 h-100">
+          <h5>Personalized learning</h5>
+          <p class="mb-0">Combining the best of AI and language science,
+            lessons are tailored to help you learn at just the right level and pace.</p>
+        </div>
+      </div>
+      <div class="class=col-sm-6 col-lg-4">
+        <img class="why-img" src="https://img.freepik.com/free-vector/study-abroad-concept-illustration_114360-7493.jpg?w=2000" height="250px">
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="card card-body bg-light p-4 h-100">
+          <h5>Stay motivated</h5>
+          <p class="mb-0">We make it easy to form a habit of language learning,
+            with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="card card-body bg-light p-4 h-100">
+          <h5>Stay motivated</h5>
+          <p class="mb-0">We make it easy to form a habit of language learning,
+            with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
+        </div>
       </div>
     </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Personalized learning</h5>
-        <p class="mb-0">Combining the best of AI and language science,
-          lessons are tailored to help you learn at just the right level and pace.</p>
-      </div>
-    </div>
-    <div class="class=col-sm-6 col-lg-4">
-      <img class="why-img" src="https://img.freepik.com/free-vector/study-abroad-concept-illustration_114360-7493.jpg?w=2000" height="250px">
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Stay motivated</h5>
-        <p class="mb-0">We make it easy to form a habit of language learning,
-          with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="card card-body bg-light p-4 h-100">
-        <h5>Stay motivated</h5>
-        <p class="mb-0">We make it easy to form a habit of language learning,
-          with game-like features, fun challenges, and reminders from our friendly mascot, Duo the owl.</p>
-      </div>
-    </div>
+    <br>
   </div>
-  <br>
-</div>
+</section>
 <br>
 <footer>
   <div class="container">
@@ -164,19 +207,19 @@
         <h5 class="me-0">Follow us</h5>
         <ul class="list-inline mb-0 mt-3">
           <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Facebook_svg-512.png">
+            <i class="fab fa-fw fa-facebook-f"></i>
           </li>
           <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Instagram_svg-512.png">
+            <i class="fab fa-fw fa-instagram"></i>
           </li>
           <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Twitter5_svg-512.png">
+            <i class="fab fa-fw fa-twitter"></i>
           </li>
           <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Youtube3_svg-512.png">
+            <i class="fab fa-fw fa-youtube"></i>
           </li>
           <li class="list-inline-item">
-            <img class="social-media" src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-512.png">
+            <i class="fab fa-fw fa-linkedin-in"></i>
           </li>
         </ul>
       </div>

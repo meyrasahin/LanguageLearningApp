@@ -5,6 +5,7 @@ import com.egeuniversity.LanguageLearning.Service.Exam.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -24,6 +25,11 @@ public class ExamController {
         int grade = examService.calculateResult(examDTO);
         model.addAttribute("grade", grade);
         return "result";
+    }
+
+    @GetMapping("exam/start")
+    public String getExam() {
+        return "exam-start";
     }
 
 

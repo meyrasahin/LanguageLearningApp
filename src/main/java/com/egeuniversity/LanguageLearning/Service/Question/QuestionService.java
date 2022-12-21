@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface QuestionService extends BaseEntityService<Integer, Question> {
     List<Question> listQuestions();
+    List<Question> listQuestionsByCourse(String courseId);
     Question getQuestion(String id);
 }

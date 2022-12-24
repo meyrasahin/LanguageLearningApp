@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Daily</title>
+    <title>Molingo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 </head>
@@ -35,10 +34,10 @@
 <body class="vsc-initialized">
 <header class="navbar-light navbar-sticky header-static">
     <nav class="navbar navbar-expand-xl">
-        <div class="container-fluid px-3 px-xl-5">
+        <div class="container-fluid px-4">
             <a class="navbar-brand" href="/" style="font-size: 50px">
-                <img src="https://cdn-icons-png.flaticon.com/512/616/616429.png" alt="Logo" width="80" height="80">
-                Daily
+                <img src="../images/logo.png" alt="Logo" height="130">
+                Molingo
             </a>
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-animation"></span>
@@ -46,13 +45,13 @@
             <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
                 <ul class="navbar-nav navbar-nav-scroll mx-auto" style="font-size: 25px">
                     <li class="nav-item me-5">
-                        <a class="nav-link" aria-current="page" href="/">Anasayfa</a>
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link active" href="courses">Dersler</a>
+                        <a class="nav-link active" href="courses">Courses</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="lecturers">Eğitmenler</a>
+                        <a class="nav-link" href="lecturers">Lecturers</a>
                     </li>
                 </ul>
                 <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
@@ -101,7 +100,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item bg-danger-soft-hover" href="#">
+                        <a class="dropdown-item bg-danger-soft-hover" href="/login">
                             <i class="bi bi-power fa-fw me-2"></i>Sign Out
                         </a>
                     </li>
@@ -130,23 +129,23 @@
                             <path class="fill-purple" d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"></path>
                         </svg>
                     </figure>
-                    <h1 class="mb-3">Seviye Belirleme Sınavı</h1>
-                    <p class="mb-3">Bu Sınav Sayesinde Çok Kısa Bir Sürede Seviyene En Uygun Kuru Öğrenebilirsin</p>
+                    <h1 class="mb-3">Placement Test</h1>
+                    <p class="mb-3">Thanks to this exam, you can learn the most suitable level for you in a very short time.</p>
                     <button type="button" class="btn btn-dark mb-0 rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Sınava Başla
+                        Start Exam
                     </button>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Önemli</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Important</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Bu özellik henüz entegre edilmemiştir.
+                                    This feature is not yet integrated.
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="/" class="btn btn-secondary">Anasayfaya Dön</a>
+                                    <a href="/" class="btn btn-secondary">Back to Home</a>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +167,7 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="card-img-top card-1" alt="..." th:id="${courses[0].id}" onclick='redirectToCourse(this.id)'>
                 <div class="card-body">
                     <h3 class="card-title" th:id="${courses[0].id}" onclick='redirectToCourse(this.id)'>[[${courses[0].name}]]</h3>
-                    <p class="card-text">Eğitmen Adı: [[${courses[0].lecturerName}]]</p>
+                    <p class="card-text">Lecturer: [[${courses[0].lecturerName}]]</p>
                 </div>
                 <div class="card-footer row">
                     <div class="col">
@@ -205,7 +204,7 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="card-img-top card-1" alt="..." th:id="${courses[1].id}" onclick='redirectToCourse(this.id)'>
                 <div class="card-body">
                     <h3 class="card-title" th:id="${courses[1].id}" onclick='redirectToCourse(this.id)'>[[${courses[1].name}]]</h3>
-                    <p class="card-text">Eğitmen Adı: [[${courses[1].lecturerName}]]</p>
+                    <p class="card-text">Lecturer: [[${courses[1].lecturerName}]]</p>
                 </div>
                 <div class="card-footer row">
                     <div class="col">
@@ -246,7 +245,7 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="card-img-top card-1" alt="..." th:id="${courses[2].id}" onclick='redirectToCourse(this.id)'>
                 <div class="card-body">
                     <h3 class="card-title" th:id="${courses[2].id}" onclick='redirectToCourse(this.id)'>[[${courses[2].name}]]</h3>
-                    <p class="card-text">Eğitmen Adı: [[${courses[2].lecturerName}]]</p>
+                    <p class="card-text">Lecturer: [[${courses[2].lecturerName}]]</p>
                 </div>
                 <div class="card-footer row">
                     <div class="col">
@@ -283,7 +282,7 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="card-img-top card-1" alt="..." th:id="${courses[3].id}" onclick='redirectToCourse(this.id)'>
                 <div class="card-body">
                     <h3 class="card-title" th:id="${courses[3].id}" onclick='redirectToCourse(this.id)'>[[${courses[3].name}]]</h3>
-                    <p class="card-text">Eğitmen Adı: [[${courses[3].lecturerName}]]</p>
+                    <p class="card-text">Lecturer: [[${courses[3].lecturerName}]]</p>
                 </div>
                 <div class="card-footer row">
                     <div class="col">
@@ -324,7 +323,7 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="card-img-top card-1" alt="..." th:id="${courses[4].id}" onclick='redirectToCourse(this.id)'>
                 <div class="card-body">
                     <h3 class="card-title" th:id="${courses[4].id}" onclick='redirectToCourse(this.id)'>[[${courses[4].name}]]</h3>
-                    <p class="card-text">Eğitmen Adı: [[${courses[4].lecturerName}]]</p>
+                    <p class="card-text">Lecturer: [[${courses[4].lecturerName}]]</p>
                 </div>
                 <div class="card-footer row">
                     <div class="col">
@@ -361,7 +360,7 @@
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg" class="card-img-top card-1" alt="..." th:id="${courses[5].id}" onclick='redirectToCourse(this.id)'>
                 <div class="card-body">
                     <h3 class="card-title" th:id="${courses[5].id}" onclick='redirectToCourse(this.id)'>[[${courses[5].name}]]</h3>
-                    <p class="card-text">Eğitmen Adı: [[${courses[5].lecturerName}]]</p>
+                    <p class="card-text">Lecturer: [[${courses[5].lecturerName}]]</p>
                 </div>
                 <div class="card-footer row">
                     <div class="col">
@@ -440,7 +439,7 @@
         <div class="container px-0">
             <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
                 <div class="text-primary-hover"> Copyrights
-                    <a href="#" class="text-body">©2022 Eduport</a>. All rights reserved.
+                    <a href="#" class="text-body">©2022 Molingo</a>. All rights reserved.
                 </div>
                 <div class="justify-content-center mt-3 mt-lg-0">
                     <ul class="nav list-inline justify-content-center mb-0">
@@ -462,6 +461,6 @@
 
 <script>
     function redirectToCourse(id){
-        window.location.href = "/course/"+id;
+        window.location.href = "/course-"+id;
     }
 </script>

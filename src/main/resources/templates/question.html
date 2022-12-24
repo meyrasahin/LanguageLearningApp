@@ -7,6 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     .result-title{
@@ -25,7 +29,8 @@
     }
 </style>
 <body class="vsc-initialized">
-<header class="navbar-light navbar-sticky header-static">
+<div id="main">
+    <header class="navbar-light navbar-sticky header-static">
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="/" style="font-size: 50px">
@@ -41,10 +46,10 @@
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="courses">Courses</a>
+                        <a class="nav-link" href="/courses">Courses</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="lecturers">Lecturers</a>
+                        <a class="nav-link" href="/lecturers">Lecturers</a>
                     </li>
                 </ul>
                 <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
@@ -69,7 +74,7 @@
                                 <img class="avatar-img rounded-circle shadow" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
                             </div>
                             <div>
-                                <a class="h6" href="#">[[${trainee.name}]] [[${trainee.surname}]]</a>
+                                <a class="h6 traineeInfo" th:id="${trainee.id}" href="#">[[${trainee.name}]] [[${trainee.surname}]]</a>
                                 <p class="small m-0">[[${trainee.email}]]</p>
                             </div>
                         </div>
@@ -102,75 +107,77 @@
         </div>
     </nav>
 </header>
-<div class="result-title">
-    <h1>[[${title}]] Course Final Exam</h1>
-</div>
-<br>
-<div>
-    <div class="btn-group me-2" role="group" style="margin-left: 14%">
-        <button type="button" class="btn levelButton" style="width: 60px; background: darkgray">1</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">2</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">3</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">4</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">5</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">6</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">7</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">8</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">9</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">10</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">11</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">12</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">13</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">14</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">15</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">16</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">17</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">18</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">19</button>
-        <button type="button" class="btn levelButton" style="width: 60px;">20</button>
+    <div class="result-title">
+        <h1 class="courseInfo" th:id="${courseId}">[[${title}]] Course Final Exam</h1>
     </div>
-</div>
-<br>
-<div style="padding-inline: 16%; display: flex; justify-content: end;">
-    <button type="button" class="btn text-white rounded-pill" style="background: darkseagreen; font-family: 'Raleway light'">Finish Exam</button>
-</div>
-<br>
-<div style="margin-left: 14%">
-    <div class="card" style="width: 1181px" >
-        <div class="card-body" style="font-family: 'Raleway light'">
-            <p class="card-text question-title" style="font-size: 1.5rem;">[[${questions[0].id}]] -)</p>
-            <p class="card-text question-text" style="font-size: 2.4rem;">[[${questions[0].text}]]</p>
+    <br>
+    <div>
+        <div class="btn-group me-2" role="group" style="margin-left: 14%">
+            <button type="button" class="btn levelButton" style="width: 60px; background: darkgray">1</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">2</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">3</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">4</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">5</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">6</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">7</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">8</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">9</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">10</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">11</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">12</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">13</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">14</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">15</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">16</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">17</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">18</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">19</button>
+            <button type="button" class="btn levelButton" style="width: 60px;">20</button>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="A" id="firstRadio">
-                <label class="form-check-label option1" for="firstRadio">[[${questions[0].option1}]]</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="B" id="secondRadio">
-                <label class="form-check-label option2" for="secondRadio">[[${questions[0].option2}]]</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="C" id="thirdRadio">
-                <label class="form-check-label option3" for="thirdRadio">[[${questions[0].option3}]]</label>
-            </li>
-            <li class="list-group-item">
-                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="D" id="forthRadio">
-                <label class="form-check-label option4" for="forthRadio">[[${questions[0].option4}]]</label>
-            </li>
-        </ul>
     </div>
+    <br>
+    <div style="padding-inline: 16%; display: flex; justify-content: end;">
+        <button type="button" class="btn text-white rounded-pill" th:id="${questions[0].id}" onclick="finish(this.id)" style="background: darkseagreen; font-family: 'Raleway light'">Finish Exam</button>
+    </div>
+    <br>
+    <div style="margin-left: 14%">
+        <div class="card" style="width: 1181px" >
+            <div class="card-body" style="font-family: 'Raleway light'">
+                <p class="card-text question-title" style="font-size: 1.5rem;">[[${questions[0].id}]] -)</p>
+                <p class="card-text question-text" style="font-size: 2.4rem;">[[${questions[0].text}]]</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="A" id="firstRadio" checked>
+                    <label class="form-check-label option1" for="firstRadio">[[${questions[0].option1}]]</label>
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="B" id="secondRadio">
+                    <label class="form-check-label option2" for="secondRadio">[[${questions[0].option2}]]</label>
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="C" id="thirdRadio">
+                    <label class="form-check-label option3" for="thirdRadio">[[${questions[0].option3}]]</label>
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="D" id="forthRadio">
+                    <label class="form-check-label option4" for="forthRadio">[[${questions[0].option4}]]</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="padding-inline: 16%; display: flex; justify-content: end;">
+        <button type="button" class="btn text-white rounded-pill nextButton" th:id="${questions[0].id}" onclick="nextQuestion(this.id)" style="background: darkgray; font-family: 'Raleway light'">Next</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
-<br>
-<br>
-<br>
-<div style="padding-inline: 16%; display: flex; justify-content: end;">
-    <button type="button" class="btn text-white rounded-pill nextButton" th:id="${questions[0].id}" onclick="nextQuestion(this.id)" style="background: darkgray; font-family: 'Raleway light'">Next</button>
-</div>
-<br>
-<br>
-<br>
-<br>
+
 
 <footer>
     <div class="container">
@@ -213,7 +220,7 @@
         <div class="container px-0">
             <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
                 <div class="text-primary-hover"> Copyrights
-                    <a href="#" class="text-body">©2022 Eduport</a>. All rights reserved.
+                    <a href="#" class="text-body">©2022 Molingo</a>. All rights reserved.
                 </div>
                 <div class="justify-content-center mt-3 mt-lg-0">
                     <ul class="nav list-inline justify-content-center mb-0">
@@ -234,10 +241,10 @@
 </html>
 
 <script>
-    let answers = "";
+    let traineeAnswers = "";
     function nextQuestion(id) {
         var traineeInput = document.querySelector('input[name="listGroupRadio"]:checked').value;
-        answers = answers + traineeInput + ",";
+        traineeAnswers = traineeAnswers + traineeInput + ",";
 
         document.getElementsByClassName("levelButton")[id].style.background = "darkgray";
 
@@ -412,7 +419,7 @@
             document.getElementsByClassName("option3")[0].innerHTML = "[[${questions[19].option3}]]"  + "";
             document.getElementsByClassName("option4")[0].innerHTML = "[[${questions[19].option4}]]"  + "";
             document.getElementsByClassName("nextButton")[0].style.visibility = "hidden";
-            console.log(answers);
+            console.log(traineeAnswers);
         }
 
         /*$.ajax({
@@ -423,6 +430,44 @@
                 console.log(data);
             },
         });*/
+
+
+    }
+    function finish(id) {
+        var traineeInput = document.querySelector('input[name="listGroupRadio"]:checked').value;
+        traineeAnswers = traineeAnswers + traineeInput + ",";
+
+        var answerSize = traineeAnswers.split(",").length;
+
+        if(answerSize < 20){
+            let necessaryInput = 21 - answerSize;
+            for (let i = 0; i < necessaryInput ; i++){
+                traineeAnswers = traineeAnswers + "X" + ",";
+            }
+        }
+
+        var traineeId = document.getElementsByClassName("traineeInfo")[0].id;
+        var courseId = document.getElementsByClassName("courseInfo")[0].id;
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/result',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                "traineeAnswers": traineeAnswers,
+                "traineeId": traineeId,
+                "courseId": courseId
+            }),
+            complete: function(data){
+                console.log("success");
+                console.log(data);
+                $("#main").html(data.responseText);
+            }
+        });
+
+
 
 
     }

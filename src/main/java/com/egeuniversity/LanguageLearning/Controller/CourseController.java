@@ -27,10 +27,14 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    @GetMapping("/course-{id}")
+    @GetMapping("/course/{id}")
     public String getById(@PathVariable String id, Model model){
         Course course = courseService.getById(id);
         model.addAttribute("course", course);
+
+        Trainee trainee = traineeService.getById(1);
+        model.addAttribute("trainee", trainee);
+
         return "course";
     }
 

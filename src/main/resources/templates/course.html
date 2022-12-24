@@ -26,10 +26,10 @@
                         <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link active" href="courses">Courses</a>
+                        <a class="nav-link active" href="/courses">Courses</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="lecturers">Lecturers</a>
+                        <a class="nav-link" href="/lecturers">Lecturers</a>
                     </li>
                 </ul>
                 <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
@@ -54,8 +54,8 @@
                                 <img class="avatar-img rounded-circle shadow" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
                             </div>
                             <div>
-                                <a class="h6" href="#">Deniz Kaya</a>
-                                <p class="small m-0">example@gmail.com</p>
+                                <a class="h6" href="#">[[${trainee.name}]] [[${trainee.surname}]]</a>
+                                <p class="small m-0">[[${trainee.email}]]</p>
                             </div>
                         </div>
                     </li>
@@ -627,6 +627,6 @@
 
 <script>
     function redirectToExamStart(id){
-        window.location.href = "/exam-start-"+id;
+        window.location.href = "/exam-start/"+id;
     }
 </script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>Molingo</title>
@@ -25,10 +25,10 @@
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item me-5">
-            <a class="nav-link" href="courses">Courses</a>
+            <a class="nav-link" href="/courses">Courses</a>
           </li>
           <li class="nav-item me-5">
-            <a class="nav-link" href="lecturers">Lecturers</a>
+            <a class="nav-link" href="/lecturers">Lecturers</a>
           </li>
         </ul>
         <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
@@ -53,8 +53,8 @@
                 <img class="avatar-img rounded-circle shadow" src="https://eduport.webestica.com/assets/images/avatar/01.jpg" alt="avatar" width="40" height="40">
               </div>
               <div>
-                <a class="h6" href="#">Deniz Kaya</a>
-                <p class="small m-0">example@gmail.com</p>
+                <a class="h6" href="#">[[${trainee.name}]] [[${trainee.surname}]]</a>
+                <p class="small m-0">[[${trainee.email}]]</p>
               </div>
             </div>
           </li>
@@ -101,7 +101,7 @@
 
           <!-- Title -->
           <h1 class="display-5">[[${course.name}]] Course Final Exam</h1>
-          <p style="color: #716A6A">Question: 20<br>Time: 30dk</p>
+          <p style="color: #716A6A">Question: 20<br>Time: 30 min</p>
 
           <div class="d-sm-flex align-items-center mt-4">
             <!-- Button -->
@@ -155,7 +155,7 @@
     <div class="container px-0">
       <div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
         <div class="text-primary-hover"> Copyrights
-          <a href="#" class="text-body">©2022 Eduport</a>. All rights reserved.
+          <a href="#" class="text-body">©2022 Molingo</a>. All rights reserved.
         </div>
         <div class="justify-content-center mt-3 mt-lg-0">
           <ul class="nav list-inline justify-content-center mb-0">
@@ -177,6 +177,6 @@
 
 <script>
   function redirectToExam(id){
-    window.location.href = "/questions/"+id;
+    window.location.href = "/exam/course"+id;
   }
 </script>

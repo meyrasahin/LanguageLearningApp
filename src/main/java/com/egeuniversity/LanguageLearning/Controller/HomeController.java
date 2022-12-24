@@ -25,7 +25,9 @@ public class HomeController {
     }
 
     @GetMapping("/lecturers")
-    public String lecturers() {
+    public String lecturers(Model model) {
+        Trainee trainee = traineeService.getById(1);
+        model.addAttribute("trainee", trainee);
         return "lecturers";
     }
 }

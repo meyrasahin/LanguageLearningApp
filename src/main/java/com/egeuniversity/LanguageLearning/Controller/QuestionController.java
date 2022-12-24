@@ -32,7 +32,7 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @GetMapping("/questions/{courseId}")
+    @GetMapping("/exam/course{courseId}")
     public String getQuestions(@PathVariable String courseId, Model model){
         Trainee trainee = traineeService.getById(1);
         model.addAttribute("trainee", trainee);
@@ -42,7 +42,8 @@ public class QuestionController {
         model.addAttribute("questions", questions);
 
         Course course = courseService.getById(courseId);
-        model.addAttribute("title", course.getCurrentLevel());
+        model.addAttribute("title", course.getName());
+        model.addAttribute("courseId", course.getId());
         return "question";
     }
 

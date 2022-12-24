@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ExamController {
@@ -23,6 +24,7 @@ public class ExamController {
 
     @Autowired
     private CourseService courseService;
+
     private ExamService examService;
 
     @Autowired
@@ -31,34 +33,32 @@ public class ExamController {
         this.examService = examService;
     }
 
-    @GetMapping("/result")
-    public String getResult(Model model){
-        ExamDTO examDTO = new ExamDTO("A,A,A,B,B,B,B,B,A,A,A,A,B,C,A,A,A,B,A,A",1,1);
-        //"C,D,C,A,D,C,A,C,B,D,C,B,B,C,A,A,A,A,A,A"
-        Trainee trainee = traineeService.getById(1);
-        model.addAttribute("trainee", trainee);
-
+    @PostMapping("/result")
+    public ModelAndView getResult(@RequestBody ExamDTO examDTO){
+        ModelAndView model;
         Exam exam = examService.calculateResult(examDTO);
-        model.addAttribute("grade", exam.getGrade());
-        model.addAttribute("correct", exam.getTrueAnswers());
-        model.addAttribute("incorrect", exam.getFalseAnswers());
-        model.addAttribute("examTitle", exam.getLevelUpExam().getTitle());
         int score = Integer.parseInt(exam.getGrade());
-        if (score > 49) {
-            return "result-success";
-        } else if (score < 50) {
-            return "result-fail";
-        }
-        else {
-            return "result-fail";
-        }
+        model = score < 50 ? new ModelAndView("result-fail") : new ModelAndView("result-success");
+
+        Trainee trainee = traineeService.getById(1);
+        model.addObject("trainee", trainee);
+
+        model.addObject("grade", exam.getGrade());
+        model.addObject("correct", exam.getTrueAnswers());
+        model.addObject("incorrect", exam.getFalseAnswers());
+        model.addObject("examTitle", courseService.getById(examDTO.getCourseId()).getName());
+
+        return model;
 
     }
 
-    @GetMapping("exam-start-{courseId}")
+    @GetMapping("exam-start/{courseId}")
     public String getExam(@PathVariable String courseId, Model model) {
         Course course = courseService.getById(courseId);
         model.addAttribute("course", course);
+
+        Trainee trainee = traineeService.getById(1);
+        model.addAttribute("trainee", trainee);
         return "exam-start";
     }
 

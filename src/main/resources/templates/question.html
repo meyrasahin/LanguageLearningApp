@@ -137,7 +137,7 @@
     </div>
     <br>
     <div style="padding-inline: 16%; display: flex; justify-content: end;">
-        <button type="button" class="btn text-white rounded-pill" th:id="${questions[0].id}" onclick="finish(this.id)" style="background: darkseagreen; font-family: 'Raleway light'">Finish Exam</button>
+        <button type="button" class="btn text-white rounded-pill" th:id="${questions[0].id}" onclick="finish()" style="background: #198754; font-family: 'Raleway light'">Finish Exam</button>
     </div>
     <br>
     <div style="margin-left: 14%">
@@ -248,7 +248,6 @@
 
         document.getElementsByClassName("levelButton")[id].style.background = "darkgray";
 
-        console.log(id);
         if(id==="1"){
             document.getElementsByClassName("question-title")[0].innerHTML = [[${questions[1].id}]] + ' -)';
             document.getElementsByClassName("question-text")[0].innerHTML = "[[${questions[1].text}]]"  + "";
@@ -419,21 +418,14 @@
             document.getElementsByClassName("option3")[0].innerHTML = "[[${questions[19].option3}]]"  + "";
             document.getElementsByClassName("option4")[0].innerHTML = "[[${questions[19].option4}]]"  + "";
             document.getElementsByClassName("nextButton")[0].style.visibility = "hidden";
-            console.log(traineeAnswers);
         }
 
-        /*$.ajax({
-            url : '/question/'+id,
-            type : 'GET',
-            dataType:'json',
-            success : function(data) {
-                console.log(data);
-            },
-        });*/
-
+        document.querySelector('input[name="listGroupRadio"]:checked').removeAttribute("checked");
+        document.getElementsByClassName('form-check-input')[0].checked=true;
 
     }
-    function finish(id) {
+
+    function finish() {
         var traineeInput = document.querySelector('input[name="listGroupRadio"]:checked').value;
         traineeAnswers = traineeAnswers + traineeInput + ",";
 
@@ -461,14 +453,9 @@
                 "courseId": courseId
             }),
             complete: function(data){
-                console.log("success");
-                console.log(data);
                 $("#main").html(data.responseText);
             }
         });
-
-
-
 
     }
 </script>

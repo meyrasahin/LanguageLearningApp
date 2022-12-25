@@ -2,12 +2,14 @@ body {
     background: #1b8c1b66 ;
     background-size: 5%;
 }
+
 .maincontainer {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(to right, rgba(255,241,235,0.5), rgba(172,224,249,0.5))
 }
 
 .monkeylogin {

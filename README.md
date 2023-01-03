@@ -5,6 +5,10 @@ This app tests its users' English proficiency levels and adjusts their lessons a
 
 Technologies such as SpringBoot, PostgreSQL, HTML, CSS, Bootstrap were used in this application.
 
+You can examine the Img folder to see the application screens.
+
+Also, you can use this link(https://egeuni.atlassian.net/wiki/spaces/LLA/overview?homepageId=164022) to access the documentation about the application.
+
 ## The implemented use case is:
 USE CASE: Taking The End-Of-Course Exam 
 

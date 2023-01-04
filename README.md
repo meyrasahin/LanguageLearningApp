@@ -1,5 +1,6 @@
 # Language Learning App
 
+## MOLINGO
 
 This app tests its users' English proficiency levels and adjusts their lessons accordingly. Each core lesson is prepared with image, video or audio content. Students must successfully complete the exam before they can move on to the next lesson. Users can improve their pronunciation, writing, listening, speaking, vocabulary and grammar skills. It can be used easily by anyone with its simple and plain interface design.
 
